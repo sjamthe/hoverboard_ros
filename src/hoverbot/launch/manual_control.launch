@@ -1,0 +1,11 @@
+<launch>
+    
+  <node pkg="hoverbot" name="control" type="control.py" output="screen" >
+  </node>
+  <node pkg="turtlesim" name="kb" type="turtle_teleop_key" output="screen" >
+  </node>
+  <node pkg="joy" name="joystick" type="joy_node" output="screen" >
+  </node>
+
+
+</launch>

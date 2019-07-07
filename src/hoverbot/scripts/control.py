@@ -13,9 +13,9 @@ import io
 def kb_callback(data):
     rospy.loginfo(rospy.get_caller_id() + " I heard %f, %f", data.linear.x,data.angular.z)
     if(data.linear.x > 0):
-        ser.write(b'w')
-    elif(data.linear.x < 0):
         ser.write(b's')
+    elif(data.linear.x < 0):
+        ser.write(b'w')
     elif(data.angular.z > 0):
         ser.write(b'a')
     elif(data.angular.z < 0):
@@ -28,9 +28,9 @@ def kb_callback(data):
 def joy_callback(data):
     rospy.loginfo(rospy.get_caller_id() + " I heard %f, %f", data.axes[0], data.axes[1])
     if(data.axes[1] > 0):
-        ser.write(b'w')
-    elif(data.axes[1] < 0):
         ser.write(b's')
+    elif(data.axes[1] < 0):
+        ser.write(b'w')
     if(data.axes[0] > 0.5):
         ser.write(b'a')
     elif(data.axes[0] < -0.5):
