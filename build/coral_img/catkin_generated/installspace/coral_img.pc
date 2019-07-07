@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws_sj/install
+
+Name: coral_img
+Description: Description of coral_img
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ubuntu/catkin_ws_sj/install/lib 
+Requires: 

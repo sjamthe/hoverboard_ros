@@ -1,0 +1,2 @@
+coral_img:hoverbot:rplidar_ros
+-DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws_sj/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws_sj/install -G Unix Makefiles
