@@ -17,9 +17,9 @@ def kb_callback(data):
     elif(data.linear.x < 0):
         ser.write(b'w')
     elif(data.angular.z > 0):
-        ser.write(b'a')
-    elif(data.angular.z < 0):
         ser.write(b'd')
+    elif(data.angular.z < 0):
+        ser.write(b'a')
 
 # listen to joystick messges produced by
 #  rosrun joy joy_node
@@ -32,9 +32,9 @@ def joy_callback(data):
     elif(data.axes[1] < 0):
         ser.write(b'w')
     if(data.axes[0] > 0.5):
-        ser.write(b'a')
-    elif(data.axes[0] < -0.5):
         ser.write(b'd')
+    elif(data.axes[0] < -0.5):
+        ser.write(b'a')
 
 if __name__ == '__main__':
 
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     rospy.loginfo("Hoverboard control node")
 
     #open serial port
-    port = rospy.get_param('~port', '/dev/ttyUSB0')
+    port = rospy.get_param('~port', '/dev/ttyUSB1')
     baud = int(rospy.get_param('~baud', '115200'))
     ser = serial.Serial(port, baud)
     rospy.loginfo("Opened port " + ser.name)
