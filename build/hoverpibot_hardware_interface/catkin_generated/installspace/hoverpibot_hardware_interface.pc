@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws_sj/install
+
+Name: hoverpibot_hardware_interface
+Description: Description of hoverpibot_hardware_interface
+Version: 0.0.1
+Cflags: -I/home/ubuntu/catkin_ws_sj/install/include
+Libs: -L/home/ubuntu/catkin_ws_sj/install/lib 
+Requires: roscpp sensor_msgs std_msgs

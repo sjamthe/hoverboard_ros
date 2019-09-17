@@ -1076,6 +1076,45 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named hoverpibotcpp
+
+# Build rule for target.
+hoverpibotcpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hoverpibotcpp
+.PHONY : hoverpibotcpp
+
+# fast build rule for target.
+hoverpibotcpp/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build
+.PHONY : hoverpibotcpp/fast
+
+#=============================================================================
+# Target rules for targets named hoverpibot_hardware_interface
+
+# Build rule for target.
+hoverpibot_hardware_interface: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hoverpibot_hardware_interface
+.PHONY : hoverpibot_hardware_interface
+
+# fast build rule for target.
+hoverpibot_hardware_interface/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/build
+.PHONY : hoverpibot_hardware_interface/fast
+
+#=============================================================================
+# Target rules for targets named hoverpibot_hardware_interface_node
+
+# Build rule for target.
+hoverpibot_hardware_interface_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hoverpibot_hardware_interface_node
+.PHONY : hoverpibot_hardware_interface_node
+
+# fast build rule for target.
+hoverpibot_hardware_interface_node/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface_node.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface_node.dir/build
+.PHONY : hoverpibot_hardware_interface_node/fast
+
+#=============================================================================
 # Target rules for targets named map_to_image_node
 
 # Build rule for target.
@@ -1626,6 +1665,9 @@ help:
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... hoverpibotcpp"
+	@echo "... hoverpibot_hardware_interface"
+	@echo "... hoverpibot_hardware_interface_node"
 	@echo "... map_to_image_node"
 	@echo "... rplidarNode"
 	@echo "... rplidarNodeClient"

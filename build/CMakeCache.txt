@@ -90,6 +90,10 @@ CATKIN_WHITELIST_PACKAGES:STRING=
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
+//For backwards compatibility, what version of CMake commands and
+// syntax should this version of CMake try to support.
+CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
+
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
 CMAKE_BUILD_TYPE:STRING=
@@ -247,6 +251,9 @@ EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 //Empy script
 EMPY_SCRIPT:STRING=/usr/bin/empy
 
+//Single output directory for building all executables.
+EXECUTABLE_OUTPUT_PATH:PATH=
+
 //The directory containing a CMake configuration file for Eigen3.
 Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
@@ -268,6 +275,9 @@ GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
 
+//Single output directory for building all libraries.
+LIBRARY_OUTPUT_PATH:PATH=
+
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
 
@@ -279,6 +289,9 @@ NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/opt/ros/kinetic/share/OpenCV-3.3.1-dev
+
+//Path to a file.
+PROJECTCONFIG:FILEPATH=PROJECTCONFIG-NOTFOUND
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
@@ -901,6 +914,9 @@ QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEB
 //Path to a library.
 QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE-NOTFOUND
 
+//rospack executable
+ROSPACK_EXE:FILEPATH=/opt/ros/kinetic/bin/rospack
+
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/arm-linux-gnueabihf/librt.so
 
@@ -912,6 +928,9 @@ UBUNTU:BOOL=TRUE
 
 //LSB Distrib - codename tag
 UBUNTU_XENIAL:BOOL=TRUE
+
+//Path to a file.
+USERCONFIG:FILEPATH=USERCONFIG-NOTFOUND
 
 //Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/include/gmock/gmock.h
@@ -1112,6 +1131,15 @@ hoverbot_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hoverbot
 //Value Computed by CMake
 hoverbot_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/hoverbot
 
+//Value Computed by CMake
+hoverpibot_hardware_interface_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hoverpibot_hardware_interface
+
+//Dependencies for the target
+hoverpibot_hardware_interface_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/arm-linux-gnueabihf/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libboost_chrono.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/usr/lib/arm-linux-gnueabihf/libboost_atomic.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;
+
+//Value Computed by CMake
+hoverpibot_hardware_interface_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface
+
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 
@@ -1177,6 +1205,12 @@ rplidar_ros_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/rplidar_ros
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
+
+//Value Computed by CMake
+src_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hoverpibot_hardware_interface
+
+//Value Computed by CMake
+src_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
@@ -1339,7 +1373,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=19
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=20
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

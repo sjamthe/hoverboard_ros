@@ -1,0 +1,14 @@
+<package>
+  <description brief="hoverpibot_hardware_interface">
+
+     hoverpibot_hardware_interface
+
+  </description>
+  <author>Shirish Jamthe</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hoverpibot_hardware_interface</url>
+
+</package>
+
+

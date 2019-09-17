@@ -7,6 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PATH="/opt/ros/kinetic/bin:/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/ubuntu/catkin_ws_sj/build"
-export PYTHONPATH="/home/ubuntu/catkin_ws_sj/devel/lib/python2.7/dist-packages:$PYTHONPATH"
