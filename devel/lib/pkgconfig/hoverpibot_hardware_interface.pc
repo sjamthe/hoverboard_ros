@@ -5,4 +5,4 @@ Description: Description of hoverpibot_hardware_interface
 Version: 0.0.1
 Cflags: -I/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/include
 Libs: -L/home/ubuntu/catkin_ws_sj/devel/lib 
-Requires: roscpp sensor_msgs std_msgs
+Requires: sensor_msgs std_msgs

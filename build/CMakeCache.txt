@@ -956,6 +956,21 @@ catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
 
+//The directory containing a CMake configuration file for control_msgs.
+control_msgs_DIR:PATH=/opt/ros/kinetic/share/control_msgs/cmake
+
+//The directory containing a CMake configuration file for control_toolbox.
+control_toolbox_DIR:PATH=/opt/ros/kinetic/share/control_toolbox/cmake
+
+//The directory containing a CMake configuration file for controller_interface.
+controller_interface_DIR:PATH=/opt/ros/kinetic/share/controller_interface/cmake
+
+//The directory containing a CMake configuration file for controller_manager.
+controller_manager_DIR:PATH=/opt/ros/kinetic/share/controller_manager/cmake
+
+//The directory containing a CMake configuration file for controller_manager_msgs.
+controller_manager_msgs_DIR:PATH=/opt/ros/kinetic/share/controller_manager_msgs/cmake
+
 //Value Computed by CMake
 coral_img_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/coral_img
 
@@ -967,6 +982,9 @@ cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
+
+//The directory containing a CMake configuration file for dynamic_reconfigure.
+dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
@@ -1031,6 +1049,9 @@ gtest_force_shared_crt:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
+
+//The directory containing a CMake configuration file for hardware_interface.
+hardware_interface_DIR:PATH=/opt/ros/kinetic/share/hardware_interface/cmake
 
 //Value Computed by CMake
 hector_compressed_map_transport_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hector_slam/hector_compressed_map_transport
@@ -1135,13 +1156,19 @@ hoverbot_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/hoverbot
 hoverpibot_hardware_interface_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hoverpibot_hardware_interface
 
 //Dependencies for the target
-hoverpibot_hardware_interface_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/arm-linux-gnueabihf/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libboost_chrono.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/usr/lib/arm-linux-gnueabihf/libboost_atomic.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;
+hoverpibot_hardware_interface_LIB_DEPENDS:STATIC=general;hoverpibotcpp;general;/opt/ros/kinetic/lib/libcontroller_manager.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/arm-linux-gnueabihf/libdl.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/arm-linux-gnueabihf/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libboost_chrono.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/usr/lib/arm-linux-gnueabihf/libboost_atomic.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/arm-linux-gnueabihf/libpython2.7.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/usr/lib/arm-linux-gnueabihf/libboost_program_options.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml.so;
 
 //Value Computed by CMake
 hoverpibot_hardware_interface_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface
 
+//Dependencies for the target
+hoverpibotcpp_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcontroller_manager.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/arm-linux-gnueabihf/libdl.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/arm-linux-gnueabihf/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libboost_chrono.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/usr/lib/arm-linux-gnueabihf/libboost_atomic.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/arm-linux-gnueabihf/libpython2.7.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/usr/lib/arm-linux-gnueabihf/libboost_program_options.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml.so;
+
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
+
+//The directory containing a CMake configuration file for joint_limits_interface.
+joint_limits_interface_DIR:PATH=/opt/ros/kinetic/share/joint_limits_interface/cmake
 
 //The directory containing a CMake configuration file for kdl_conversions.
 kdl_conversions_DIR:PATH=/opt/ros/kinetic/share/kdl_conversions/cmake
@@ -1167,8 +1194,14 @@ nav_msgs_DIR:PATH=/opt/ros/kinetic/share/nav_msgs/cmake
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
 
+//The directory containing a CMake configuration file for realtime_tools.
+realtime_tools_DIR:PATH=/opt/ros/kinetic/share/realtime_tools/cmake
+
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
+
+//The directory containing a CMake configuration file for rosconsole_bridge.
+rosconsole_bridge_DIR:PATH=/opt/ros/kinetic/share/rosconsole_bridge/cmake
 
 //The directory containing a CMake configuration file for roscpp.
 roscpp_DIR:PATH=/opt/ros/kinetic/share/roscpp/cmake
@@ -1232,6 +1265,15 @@ tf_DIR:PATH=/opt/ros/kinetic/share/tf/cmake
 
 //The directory containing a CMake configuration file for tf_conversions.
 tf_conversions_DIR:PATH=/opt/ros/kinetic/share/tf_conversions/cmake
+
+//The directory containing a CMake configuration file for trajectory_msgs.
+trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
+
+//The directory containing a CMake configuration file for transmission_interface.
+transmission_interface_DIR:PATH=/opt/ros/kinetic/share/transmission_interface/cmake
+
+//The directory containing a CMake configuration file for urdf.
+urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
 
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/kinetic/share/visualization_msgs/cmake

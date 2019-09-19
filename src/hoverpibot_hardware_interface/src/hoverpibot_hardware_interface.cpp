@@ -14,8 +14,9 @@ using joint_limits_interface::PositionJointSoftLimitsInterface;
 
 namespace hoverpibot_hardware_interface
 {
-    hoverpibotHardwareInterface::hoverpibotHardwareInterface(ros::NodeHandle& nh) : nh_(nh) {
+    hoverpibotHardwareInterface::hoverpibotHardwareInterface(ros::NodeHandle& nh) : nh_(nh),hoverpibot(nh) {
         init();
+        hoverpibot.init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
         nh_.param("/hoverpibot/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
@@ -75,15 +76,26 @@ namespace hoverpibot_hardware_interface
     }
 
     void hoverpibotHardwareInterface::read() {
-        /*for (int i = 0; i < num_joints_; i++) {
-            joint_position_[i] = hoverpibot.getJoint(joint_names_[i]).read();
-        }*/
+
     }
 
     void hoverpibotHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
-        /*for (int i = 0; i < num_joints_; i++) {
-            hoverpibot.getJoint(joint_names_[i]).actuate(joint_effort_command_[i]);
-        }*/
+
+        sensor_msgs::JointState wheelPositions; //This has to be local variable. for some reason.
+        wheelPositions.header.stamp = ros::Time::now();
+        wheelPositions.name.resize(2);
+        wheelPositions.name[0] = "LEFT";
+        wheelPositions.name[1] = "RIGHT";
+        wheelPositions.position.resize(2);
+        wheelPositions.position[0] = 90;
+        wheelPositions.position[1] = 90;
+        wheelPositions.velocity.resize(2);
+        wheelPositions.velocity[0] = 0;
+        wheelPositions.velocity[1] = 0;
+        wheelPositions.effort.resize(2);
+        wheelPositions.effort[0] = 0;
+        wheelPositions.effort[1] = 0;
+        //hoverpibot.actuate(wheelPositions);
     }
 }

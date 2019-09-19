@@ -6,12 +6,18 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/src/hoverpibotcpp.cpp
+/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/include/hoverpibotcpp/hoverpibot.h
+sstream
+-
 ros/ros.h
-/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/src/ros/ros.h
+-
 sensor_msgs/JointState.h
-/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/src/sensor_msgs/JointState.h
+-
 string.h
+-
+
+/home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/src/hoverpibotcpp.cpp
+hoverpibotcpp/hoverpibot.h
 -
 
 /opt/ros/kinetic/include/ros/advertise_options.h

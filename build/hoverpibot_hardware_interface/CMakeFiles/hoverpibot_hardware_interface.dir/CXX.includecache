@@ -49,11 +49,19 @@ boost/scoped_ptr.hpp
 -
 ros/ros.h
 -
+hoverpibotcpp/hoverpibot.h
+-
 hoverpibot_hardware_interface/hoverpibot_hardware.h
 -
 
 /home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/include/hoverpibotcpp/hoverpibot.h
 sstream
+-
+ros/ros.h
+-
+sensor_msgs/JointState.h
+-
+string.h
 -
 
 /home/ubuntu/catkin_ws_sj/src/hoverpibot_hardware_interface/src/hoverpibot_hardware_interface.cpp
@@ -1431,6 +1439,40 @@ ros/forwards.h
 /opt/ros/kinetic/include/ros/ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
+
+/opt/ros/kinetic/include/sensor_msgs/JointState.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+
+/opt/ros/kinetic/include/std_msgs/Header.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/kinetic/include/urdf/urdfdom_compatibility.h
 boost/shared_ptr.hpp

@@ -88,33 +88,43 @@ hoverpibotcpp_OBJECTS = \
 # External object files for target hoverpibotcpp
 hoverpibotcpp_EXTERNAL_OBJECTS =
 
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/src/hoverpibotcpp.o
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build.make
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/libroscpp.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_filesystem.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_signals.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/librosconsole.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/liblog4cxx.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_regex.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/librostime.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /opt/ros/kinetic/lib/libcpp_common.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_system.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_thread.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_chrono.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_date_time.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libboost_atomic.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libpthread.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: /usr/lib/arm-linux-gnueabihf/libconsole_bridge.so
-/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp: hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/catkin_ws_sj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp"
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/src/hoverpibotcpp.o
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build.make
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/libcontroller_manager.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_signals.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libtinyxml2.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/libPocoFoundation.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libdl.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/liblog4cxx.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_regex.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/librostime.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_thread.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_chrono.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_date_time.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_atomic.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libpthread.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libconsole_bridge.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/libroslib.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /opt/ros/kinetic/lib/librospack.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libpython2.7.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_filesystem.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_program_options.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libboost_system.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: /usr/lib/arm-linux-gnueabihf/libtinyxml.so
+/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so: hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/catkin_ws_sj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so"
 	cd /home/ubuntu/catkin_ws_sj/build/hoverpibot_hardware_interface && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hoverpibotcpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build: /home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp
+hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build: /home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so
 
 .PHONY : hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build
 

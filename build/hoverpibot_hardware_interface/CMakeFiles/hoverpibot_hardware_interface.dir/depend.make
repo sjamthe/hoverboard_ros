@@ -116,6 +116,8 @@ hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/h
 hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/ros/wall_timer.h
 hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/sensor_msgs/JointState.h
+hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/std_msgs/Header.h
 hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/urdf/urdfdom_compatibility.h
 hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/hoverpibot_hardware_interface.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

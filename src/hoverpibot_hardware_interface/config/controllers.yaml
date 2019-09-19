@@ -4,11 +4,11 @@ hoverpibot:
       type: joint_state_controller/JointStateController
       publish_rate: 50
     position:
-      YOUR_ROBOT_JOINT:
+      left_wheel:
         type: effort_controllers/JointPositionController
         joint: left_wheel
         pid: {p: 60.0, i: 200.0, d: 1.0}
-      YOUR_OTHER_ROBOT_JOINT:
+      right_wheel:
         type: effort_controllers/JointPositionController
         joint: right_wheel
         pid: {p: 71.0, i: 200.0, d: 1.0}

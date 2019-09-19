@@ -1076,30 +1076,17 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named hoverpibotcpp
+# Target rules for targets named controller_manager_msgs_generate_messages_cpp
 
 # Build rule for target.
-hoverpibotcpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hoverpibotcpp
-.PHONY : hoverpibotcpp
+controller_manager_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_manager_msgs_generate_messages_cpp
+.PHONY : controller_manager_msgs_generate_messages_cpp
 
 # fast build rule for target.
-hoverpibotcpp/fast:
-	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build
-.PHONY : hoverpibotcpp/fast
-
-#=============================================================================
-# Target rules for targets named hoverpibot_hardware_interface
-
-# Build rule for target.
-hoverpibot_hardware_interface: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hoverpibot_hardware_interface
-.PHONY : hoverpibot_hardware_interface
-
-# fast build rule for target.
-hoverpibot_hardware_interface/fast:
-	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/build
-.PHONY : hoverpibot_hardware_interface/fast
+controller_manager_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build.make hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build
+.PHONY : controller_manager_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named hoverpibot_hardware_interface_node
@@ -1113,6 +1100,84 @@ hoverpibot_hardware_interface_node: cmake_check_build_system
 hoverpibot_hardware_interface_node/fast:
 	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface_node.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface_node.dir/build
 .PHONY : hoverpibot_hardware_interface_node/fast
+
+#=============================================================================
+# Target rules for targets named controller_manager_msgs_generate_messages_lisp
+
+# Build rule for target.
+controller_manager_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_manager_msgs_generate_messages_lisp
+.PHONY : controller_manager_msgs_generate_messages_lisp
+
+# fast build rule for target.
+controller_manager_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build.make hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build
+.PHONY : controller_manager_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named controller_manager_msgs_generate_messages_eus
+
+# Build rule for target.
+controller_manager_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_manager_msgs_generate_messages_eus
+.PHONY : controller_manager_msgs_generate_messages_eus
+
+# fast build rule for target.
+controller_manager_msgs_generate_messages_eus/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build.make hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build
+.PHONY : controller_manager_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named hoverpibotcpp
+
+# Build rule for target.
+hoverpibotcpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hoverpibotcpp
+.PHONY : hoverpibotcpp
+
+# fast build rule for target.
+hoverpibotcpp/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibotcpp.dir/build
+.PHONY : hoverpibotcpp/fast
+
+#=============================================================================
+# Target rules for targets named controller_manager_msgs_generate_messages_nodejs
+
+# Build rule for target.
+controller_manager_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_manager_msgs_generate_messages_nodejs
+.PHONY : controller_manager_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+controller_manager_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/build.make hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/build
+.PHONY : controller_manager_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named controller_manager_msgs_generate_messages_py
+
+# Build rule for target.
+controller_manager_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_manager_msgs_generate_messages_py
+.PHONY : controller_manager_msgs_generate_messages_py
+
+# fast build rule for target.
+controller_manager_msgs_generate_messages_py/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/build.make hoverpibot_hardware_interface/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/build
+.PHONY : controller_manager_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named hoverpibot_hardware_interface
+
+# Build rule for target.
+hoverpibot_hardware_interface: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hoverpibot_hardware_interface
+.PHONY : hoverpibot_hardware_interface
+
+# fast build rule for target.
+hoverpibot_hardware_interface/fast:
+	$(MAKE) -f hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/build.make hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/build
+.PHONY : hoverpibot_hardware_interface/fast
 
 #=============================================================================
 # Target rules for targets named map_to_image_node
@@ -1665,9 +1730,14 @@ help:
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... hoverpibotcpp"
-	@echo "... hoverpibot_hardware_interface"
+	@echo "... controller_manager_msgs_generate_messages_cpp"
 	@echo "... hoverpibot_hardware_interface_node"
+	@echo "... controller_manager_msgs_generate_messages_lisp"
+	@echo "... controller_manager_msgs_generate_messages_eus"
+	@echo "... hoverpibotcpp"
+	@echo "... controller_manager_msgs_generate_messages_nodejs"
+	@echo "... controller_manager_msgs_generate_messages_py"
+	@echo "... hoverpibot_hardware_interface"
 	@echo "... map_to_image_node"
 	@echo "... rplidarNode"
 	@echo "... rplidarNodeClient"

@@ -11,7 +11,7 @@
 #include <controller_manager/controller_manager.h>
 #include <boost/scoped_ptr.hpp>
 #include <ros/ros.h>
-//#include <hoverpibotcpp/hoverpibot.h>
+#include <hoverpibotcpp/hoverpibot.h>
 #include <hoverpibot_hardware_interface/hoverpibot_hardware.h>
 
 using namespace hardware_interface;
@@ -37,7 +37,7 @@ namespace hoverpibot_hardware_interface
             void write(ros::Duration elapsed_time);
 
         protected:
-            //hoverpibotcpp::HoverPiBot hoverpibot;
+            hoverpibotcpp::HoverPiBot hoverpibot;
             ros::NodeHandle nh_;
             ros::Timer non_realtime_loop_;
             ros::Duration control_period_;

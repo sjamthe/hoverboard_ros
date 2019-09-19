@@ -117,6 +117,8 @@ hoverpibot_hardware_interface/CMakeFiles/hoverpibot_hardware_interface.dir/src/h
  /opt/ros/kinetic/include/ros/wall_timer.h
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
+ /opt/ros/kinetic/include/sensor_msgs/JointState.h
+ /opt/ros/kinetic/include/std_msgs/Header.h
  /opt/ros/kinetic/include/urdf/urdfdom_compatibility.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

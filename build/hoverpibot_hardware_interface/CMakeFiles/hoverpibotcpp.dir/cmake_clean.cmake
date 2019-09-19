@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hoverpibotcpp.dir/src/hoverpibotcpp.o"
-  "/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp.pdb"
-  "/home/ubuntu/catkin_ws_sj/devel/lib/hoverpibot_hardware_interface/hoverpibotcpp"
+  "/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.pdb"
+  "/home/ubuntu/catkin_ws_sj/devel/lib/libhoverpibotcpp.so"
 )
 
 # Per-language clean rules from dependency scanning.
