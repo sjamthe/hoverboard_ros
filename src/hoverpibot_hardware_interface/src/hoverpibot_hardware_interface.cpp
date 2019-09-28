@@ -15,6 +15,7 @@ using joint_limits_interface::PositionJointSoftLimitsInterface;
 namespace hoverpibot_hardware_interface
 {
     hoverpibotHardwareInterface::hoverpibotHardwareInterface(ros::NodeHandle& nh) : nh_(nh),hoverpibot(nh) {
+        printf("Inside hoverpibotHardwareInterface init\n");
         init();
         hoverpibot.init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
@@ -70,32 +71,43 @@ namespace hoverpibot_hardware_interface
 
     void hoverpibotHardwareInterface::update(const ros::TimerEvent& e) {
         elapsed_time_ = ros::Duration(e.current_real - e.last_real);
+        //printf("Inside update %lf\n",elapsed_time_.toSec());
         read();
         controller_manager_->update(ros::Time::now(), elapsed_time_);
         write(elapsed_time_);
     }
 
     void hoverpibotHardwareInterface::read() {
-
+        sensor_msgs::JointState wheelPositions = hoverpibot.read();
     }
 
     void hoverpibotHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
 
-        sensor_msgs::JointState wheelPositions; //This has to be local variable. for some reason.
-        wheelPositions.header.stamp = ros::Time::now();
-        wheelPositions.name.resize(2);
-        wheelPositions.name[0] = "LEFT";
-        wheelPositions.name[1] = "RIGHT";
-        wheelPositions.position.resize(2);
-        wheelPositions.position[0] = 90;
-        wheelPositions.position[1] = 90;
-        wheelPositions.velocity.resize(2);
-        wheelPositions.velocity[0] = 0;
-        wheelPositions.velocity[1] = 0;
-        wheelPositions.effort.resize(2);
-        wheelPositions.effort[0] = 0;
-        wheelPositions.effort[1] = 0;
-        //hoverpibot.actuate(wheelPositions);
+        double effort_left = joint_effort_command_[0];
+        double effort_right = joint_effort_command_[1];
+
+        std::ostringstream jointEffortStr;
+			  jointEffortStr << effort_left;
+			  std::string _logInfo = "left effort: " + jointEffortStr.str() ;
+        jointEffortStr << effort_right;
+        _logInfo += " right effort: " + jointEffortStr.str()  +  "\n";
+        ROS_INFO_STREAM(_logInfo);
+
+        sensor_msgs::JointState newWheelPositions; //This has to be local variable. for some reason.
+        newWheelPositions.header.stamp = ros::Time::now();
+        newWheelPositions.name.resize(2);
+        newWheelPositions.name[0] = "LEFT";
+        newWheelPositions.name[1] = "RIGHT";
+        newWheelPositions.position.resize(2);
+        newWheelPositions.position[0] = 0;
+        newWheelPositions.position[1] = 0;
+        newWheelPositions.velocity.resize(2);
+        newWheelPositions.velocity[0] = 0;
+        newWheelPositions.velocity[1] = 0;
+        newWheelPositions.effort.resize(2);
+        newWheelPositions.effort[0] = effort_left;
+        newWheelPositions.effort[1] = effort_right;
+        hoverpibot.actuate(newWheelPositions);
     }
 }

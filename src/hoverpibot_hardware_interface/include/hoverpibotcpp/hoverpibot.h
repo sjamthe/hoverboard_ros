@@ -13,14 +13,15 @@ namespace hoverpibotcpp
 		public:
 			HoverPiBot(ros::NodeHandle& nh);
 			~HoverPiBot();
-			sensor_msgs::JointState read();
+			sensor_msgs::JointState read(void);
 			void init(void);
 			void actuate(sensor_msgs::JointState joint);
 
 		protected:
 			ros::NodeHandle nh_;
 			ros::Publisher wheels_cmd_pub_;
-
+			void callback(const sensor_msgs::JointState& joint);
+			sensor_msgs::JointState botJointState;
 	};
 }
 

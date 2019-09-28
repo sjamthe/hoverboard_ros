@@ -1,0 +1,113 @@
+<robot name="hoverpibot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="robotwidth" value="0.60" />
+  <xacro:property name="bodywidth" value="0.48" />
+  <xacro:property name="bodylen" value="0.19" />
+  <xacro:property name="bodyheight" value="0.10" />
+  <xacro:property name="wheeldiam" value="0.1651" />
+  <xacro:property name="wheelwidth" value="0.06" />
+  <xacro:property name="pi" value="3.1415" />
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+  </xacro:macro>
+
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 ${wheeldiam/2}" rpy="0 0 0" />
+      <geometry>
+        <box size="${bodylen} ${bodywidth} ${bodyheight}"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${bodylen} ${bodywidth} ${bodyheight}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="left_wheel">
+    <visual>
+      <origin xyz="0 -${bodywidth/2 + wheelwidth/2} 0" rpy="${pi/2} 0 0" />
+      <geometry>
+        <cylinder radius="${wheeldiam/2}" length="${wheelwidth}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="${wheeldiam/2}" length="${wheelwidth}"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="1"/>
+  </link>
+
+  <joint name="left_wheel" type="continuous">
+    <axis xyz="0 1 0" />
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0 ${wheeldiam/2}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_wheel">
+    <visual>
+      <origin xyz="0 ${bodywidth/2 + wheelwidth/2} 0" rpy="${pi/2} 0 0" />
+      <geometry>
+        <cylinder radius="${wheeldiam/2}" length="${wheelwidth}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="${wheeldiam/2}" length="${wheelwidth}"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="1"/>
+  </link>
+
+  <joint name="right_wheel" type="continuous">
+    <axis xyz="0 1 0" />
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 0 ${wheeldiam/2}" rpy="0 0 0"/>
+  </joint>
+
+  <transmission name="left_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>
