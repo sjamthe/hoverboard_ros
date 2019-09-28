@@ -20,6 +20,7 @@ namespace hoverpibotcpp
 		protected:
 			ros::NodeHandle nh_;
 			ros::Publisher wheels_cmd_pub_;
+			ros::Subscriber sub;
 			void callback(const sensor_msgs::JointState& joint);
 			sensor_msgs::JointState botJointState;
 	};

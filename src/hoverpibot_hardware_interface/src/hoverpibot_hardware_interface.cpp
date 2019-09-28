@@ -79,20 +79,36 @@ namespace hoverpibot_hardware_interface
 
     void hoverpibotHardwareInterface::read() {
         sensor_msgs::JointState wheelPositions = hoverpibot.read();
+        joint_position_[0] = wheelPositions.position[0];
+        joint_position_[1] = wheelPositions.position[1];
+        joint_velocity_[0] = wheelPositions.velocity[0];
+        joint_velocity_[1] = wheelPositions.velocity[1];
+        joint_effort_[0] = wheelPositions.effort[0];
+        joint_effort_[1] = wheelPositions.effort[1];
     }
 
     void hoverpibotHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
 
-        double effort_left = joint_effort_command_[0];
-        double effort_right = joint_effort_command_[1];
+        //double effort_left = joint_effort_command_[0];
+        //double effort_right = joint_effort_command_[1];
+       //double effort_left = joint_position_command_[0];
+        //double effort_right = joint_position_command_[1];
 
         std::ostringstream jointEffortStr;
-			  jointEffortStr << effort_left;
-			  std::string _logInfo = "left effort: " + jointEffortStr.str() ;
-        jointEffortStr << effort_right;
-        _logInfo += " right effort: " + jointEffortStr.str()  +  "\n";
+			  jointEffortStr << joint_effort_command_[0]
+                       << " vel=" << joint_velocity_command_[0]
+                       << " pos=" << joint_position_command_[0];
+        std::string _logInfo = "left command: eff=" + jointEffortStr.str();
         ROS_INFO_STREAM(_logInfo);
+        jointEffortStr.str("");
+
+        jointEffortStr << joint_effort_command_[1]
+                       << " vel=" << joint_velocity_command_[1]
+                       << " pos=" << joint_position_command_[1];
+        _logInfo = "right command: eff=" + jointEffortStr.str();
+        ROS_INFO_STREAM(_logInfo);
+        jointEffortStr.str("");
 
         sensor_msgs::JointState newWheelPositions; //This has to be local variable. for some reason.
         newWheelPositions.header.stamp = ros::Time::now();
@@ -106,8 +122,8 @@ namespace hoverpibot_hardware_interface
         newWheelPositions.velocity[0] = 0;
         newWheelPositions.velocity[1] = 0;
         newWheelPositions.effort.resize(2);
-        newWheelPositions.effort[0] = effort_left;
-        newWheelPositions.effort[1] = effort_right;
+        newWheelPositions.effort[0] = joint_effort_command_[0];
+        newWheelPositions.effort[1] = joint_effort_command_[1];
         hoverpibot.actuate(newWheelPositions);
     }
 }

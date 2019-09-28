@@ -7,8 +7,8 @@ hoverpibot:
       left_wheel:
         type: effort_controllers/JointPositionController
         joint: left_wheel
-        pid: {p: 60.0, i: 200.0, d: 1.0}
+        pid: {p: 1.0, i: 1.0, d: 1.0}
       right_wheel:
         type: effort_controllers/JointPositionController
         joint: right_wheel
-        pid: {p: 71.0, i: 200.0, d: 1.0}
+        pid: {p: 60.0, i: 200.0, d: 1.0}

@@ -15,7 +15,7 @@
 namespace hoverpibot_hardware_interface
 {
     /// \brief Hardware interface for a robot
-    class hoverpibotHardware : public hardware_interface::RobotHW 
+    class hoverpibotHardware : public hardware_interface::RobotHW
     {
         protected:
             // Interfaces

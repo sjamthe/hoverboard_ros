@@ -1,6 +1,7 @@
 #include <hoverpibot_hardware_interface/hoverpibot_hardware_interface.h>
+#include <ros/callback_queue.h>
 
-int main(int argc, char** argv)
+int main2(int argc, char** argv)
 {
   ros::init(argc, argv, "hoverpibot_hardware_interface");
   ros::NodeHandle nh;
@@ -13,7 +14,21 @@ int main(int argc, char** argv)
   hoverpibot_hardware_interface::hoverpibotHardwareInterface rhi(nh);
 
   ros::spin();
-  //ros::waitForShutdown();
 
   return 0;
+}
+
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "hoverpibot_hardware_interface");
+    ros::CallbackQueue ros_queue;
+
+    ros::NodeHandle nh;
+    nh.setCallbackQueue(&ros_queue);
+    hoverpibot_hardware_interface::hoverpibotHardwareInterface rhi(nh);
+
+    ros::MultiThreadedSpinner spinner(0);
+    spinner.spin(&ros_queue);
+    //spinner.spin();
+    return 0;
 }
