@@ -13,7 +13,12 @@ namespace hoverpibotcpp
   void HoverPiBot::callback(const sensor_msgs::JointState& joint)
   {
     //ROS_INFO("I heard: [%s]", joint.name[0].c_str());
+    //Convert velocity in m/s and position in meters.
     botJointState = joint;
+    botJointState.position[0] *= WHEEL_POS_PER_TICK;
+    botJointState.position[1] *= WHEEL_POS_PER_TICK;
+    botJointState.velocity[0] *= WHEEL_POS_PER_TICK;
+    botJointState.velocity[1] *= WHEEL_POS_PER_TICK;
   }
 
   void HoverPiBot::init() {

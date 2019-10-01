@@ -45,28 +45,32 @@ namespace hoverpibot_hardware_interface
         for (int i = 0; i < num_joints_; ++i) {
             //hoverpibotcpp::Joint joint = hoverpibot.getJoint(joint_names_[i]);
 
-             // Create joint state interface
+            // Create joint state interface
             JointStateHandle jointStateHandle(joint_names_[i], &joint_position_[i], &joint_velocity_[i], &joint_effort_[i]);
-             joint_state_interface_.registerHandle(jointStateHandle);
+            joint_state_interface_.registerHandle(jointStateHandle);
 
-            // Create position joint interface
-            JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
             JointLimits limits;
-                SoftJointLimits softLimits;
             getJointLimits(joint_names_[i], nh_, limits);
+
+            SoftJointLimits softLimits;
+
+            /* Create position joint interface
+            JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
+
             PositionJointSoftLimitsHandle jointLimitsHandle(jointPositionHandle, limits, softLimits);
             positionJointSoftLimitsInterface.registerHandle(jointLimitsHandle);
             position_joint_interface_.registerHandle(jointPositionHandle);
-
+            */
             // Create effort joint interface
             JointHandle jointEffortHandle(jointStateHandle, &joint_effort_command_[i]);
             effort_joint_interface_.registerHandle(jointEffortHandle);
+
         }
 
         registerInterface(&joint_state_interface_);
-        registerInterface(&position_joint_interface_);
+        //registerInterface(&position_joint_interface_);
         registerInterface(&effort_joint_interface_);
-        registerInterface(&positionJointSoftLimitsInterface);
+        //registerInterface(&positionJointSoftLimitsInterface);
     }
 
     void hoverpibotHardwareInterface::update(const ros::TimerEvent& e) {
@@ -97,15 +101,15 @@ namespace hoverpibot_hardware_interface
 
         std::ostringstream jointEffortStr;
 			  jointEffortStr << joint_effort_command_[0]
-                       << " vel=" << joint_velocity_command_[0]
-                       << " pos=" << joint_position_command_[0];
+                       << " vel=" << joint_velocity_[0]
+                       << " pos=" << joint_position_[0];
         std::string _logInfo = "left command: eff=" + jointEffortStr.str();
         ROS_INFO_STREAM(_logInfo);
         jointEffortStr.str("");
 
         jointEffortStr << joint_effort_command_[1]
-                       << " vel=" << joint_velocity_command_[1]
-                       << " pos=" << joint_position_command_[1];
+                       << " vel=" << joint_velocity_[1]
+                       << " pos=" << joint_position_[1];
         _logInfo = "right command: eff=" + jointEffortStr.str();
         ROS_INFO_STREAM(_logInfo);
         jointEffortStr.str("");
@@ -123,7 +127,7 @@ namespace hoverpibot_hardware_interface
         newWheelPositions.velocity[1] = 0;
         newWheelPositions.effort.resize(2);
         newWheelPositions.effort[0] = joint_effort_command_[0];
-        newWheelPositions.effort[1] = joint_effort_command_[1];
+        newWheelPositions.effort[1] = joint_effort_command_[1]*-1;//Right wheel turns opposite dir
         hoverpibot.actuate(newWheelPositions);
     }
 }

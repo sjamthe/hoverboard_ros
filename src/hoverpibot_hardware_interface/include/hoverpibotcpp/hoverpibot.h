@@ -6,6 +6,10 @@
 #include <sensor_msgs/JointState.h>
 #include <string.h>
 
+#define DEFAULT_WHEEL_SIZE_INCHES 6.5
+#define PI 3.14159265358979f
+#define WHEEL_POS_PER_TICK (PI*DEFAULT_WHEEL_SIZE_INCHES*25.4/90/1000)
+
 namespace hoverpibotcpp
 {
 	class HoverPiBot

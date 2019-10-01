@@ -1,7 +1,7 @@
 #include <hoverpibot_hardware_interface/hoverpibot_hardware_interface.h>
 #include <ros/callback_queue.h>
 
-int main2(int argc, char** argv)
+/*int main2(int argc, char** argv)
 {
   ros::init(argc, argv, "hoverpibot_hardware_interface");
   ros::NodeHandle nh;
@@ -16,7 +16,7 @@ int main2(int argc, char** argv)
   ros::spin();
 
   return 0;
-}
+}*/
 
 int main(int argc, char** argv)
 {
