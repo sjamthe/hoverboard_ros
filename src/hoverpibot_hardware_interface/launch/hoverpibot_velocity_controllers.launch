@@ -1,0 +1,21 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find hoverpibot_hardware_interface)/urdf/hoverpibot.urdf.xacro" />
+    <rosparam file="$(find hoverpibot_hardware_interface)/config/hardware.yaml" command="load"/>
+    <rosparam file="$(find hoverpibot_hardware_interface)/config/controllers.yaml" command="load"/>
+    <rosparam file="$(find hoverpibot_hardware_interface)/config/joint_limits.yaml" command="load"/>
+    <node name="hoverpibot_hardware_interface" pkg="hoverpibot_hardware_interface" type="hoverpibot_hardware_interface_node" output="screen"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
+        args="
+            /hoverpibot/controller/state
+            /hoverpibot/controller/velocity/left_wheel
+            /hoverpibot/controller/velocity/right_wheel
+        "/>
+        <!--  /hoverpibot/controller/position/left_wheel
+          /hoverpibot/controller/position/right_wheel -->
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+      respawn="false" output="screen">
+      <remap from="/joint_states" to="/hoverpibot/joint_states" />
+    </node>
+</launch>

@@ -65,11 +65,15 @@ namespace hoverpibot_hardware_interface
             JointHandle jointEffortHandle(jointStateHandle, &joint_effort_command_[i]);
             effort_joint_interface_.registerHandle(jointEffortHandle);
 
+            JointHandle jointVelocityHandle(jointStateHandle, &joint_velocity_command_[i]);
+            velocity_joint_interface_.registerHandle(jointVelocityHandle);
+
         }
 
         registerInterface(&joint_state_interface_);
         //registerInterface(&position_joint_interface_);
-        registerInterface(&effort_joint_interface_);
+        //registerInterface(&effort_joint_interface_);
+        registerInterface(&velocity_joint_interface_);
         //registerInterface(&positionJointSoftLimitsInterface);
     }
 
@@ -101,14 +105,14 @@ namespace hoverpibot_hardware_interface
 
         std::ostringstream jointEffortStr;
 			  jointEffortStr << joint_effort_command_[0]
-                       << " vel=" << joint_velocity_[0]
+                       << " vel=" << joint_velocity_command_[0]
                        << " pos=" << joint_position_[0];
         std::string _logInfo = "left command: eff=" + jointEffortStr.str();
         ROS_INFO_STREAM(_logInfo);
         jointEffortStr.str("");
 
         jointEffortStr << joint_effort_command_[1]
-                       << " vel=" << joint_velocity_[1]
+                       << " vel=" << joint_velocity_command_[1]
                        << " pos=" << joint_position_[1];
         _logInfo = "right command: eff=" + jointEffortStr.str();
         ROS_INFO_STREAM(_logInfo);
@@ -123,8 +127,8 @@ namespace hoverpibot_hardware_interface
         newWheelPositions.position[0] = 0;
         newWheelPositions.position[1] = 0;
         newWheelPositions.velocity.resize(2);
-        newWheelPositions.velocity[0] = 0;
-        newWheelPositions.velocity[1] = 0;
+        newWheelPositions.velocity[0] = joint_velocity_command_[0];
+        newWheelPositions.velocity[1] = joint_velocity_command_[1];
         newWheelPositions.effort.resize(2);
         newWheelPositions.effort[0] = joint_effort_command_[0];
         newWheelPositions.effort[1] = joint_effort_command_[1]*-1;//Right wheel turns opposite dir
