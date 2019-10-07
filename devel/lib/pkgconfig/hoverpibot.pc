@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws_sj/devel
+
+Name: hoverpibot
+Description: Description of hoverpibot
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ubuntu/catkin_ws_sj/devel/lib 
+Requires: 

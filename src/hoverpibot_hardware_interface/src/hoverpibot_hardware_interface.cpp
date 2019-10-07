@@ -87,12 +87,14 @@ namespace hoverpibot_hardware_interface
 
     void hoverpibotHardwareInterface::read() {
         sensor_msgs::JointState wheelPositions = hoverpibot.read();
-        joint_position_[0] = wheelPositions.position[0];
-        joint_position_[1] = wheelPositions.position[1];
-        joint_velocity_[0] = wheelPositions.velocity[0];
-        joint_velocity_[1] = wheelPositions.velocity[1];
-        joint_effort_[0] = wheelPositions.effort[0];
-        joint_effort_[1] = wheelPositions.effort[1];
+        if(sizeof(wheelPositions.position) == sizeof(joint_position_)) {
+          joint_position_[0] = wheelPositions.position[0];
+          joint_position_[1] = wheelPositions.position[1];
+          joint_velocity_[0] = wheelPositions.velocity[0];
+          joint_velocity_[1] = wheelPositions.velocity[1];
+          joint_effort_[0] = wheelPositions.effort[0];
+          joint_effort_[1] = wheelPositions.effort[1];
+      }
     }
 
     void hoverpibotHardwareInterface::write(ros::Duration elapsed_time) {

@@ -933,6 +933,9 @@ UBUNTU_XENIAL:BOOL=TRUE
 USERCONFIG:FILEPATH=USERCONFIG-NOTFOUND
 
 //Path to a file.
+_file_name:FILEPATH=/home/ubuntu/catkin_ws_sj/src/twist_mux/test/system.test
+
+//Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/include/gmock/gmock.h
 
 //Path to a file.
@@ -982,6 +985,12 @@ cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
+
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/kinetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/kinetic/share/diagnostic_updater/cmake
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
@@ -1153,6 +1162,12 @@ hoverbot_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hoverbot
 hoverbot_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/hoverbot
 
 //Value Computed by CMake
+hoverpibot_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hoverpibot
+
+//Value Computed by CMake
+hoverpibot_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/hoverpibot
+
+//Value Computed by CMake
 hoverpibot_hardware_interface_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/hoverpibot_hardware_interface
 
 //Dependencies for the target
@@ -1177,7 +1192,7 @@ kdl_conversions_DIR:PATH=/opt/ros/kinetic/share/kdl_conversions/cmake
 laser_geometry_DIR:PATH=/opt/ros/kinetic/share/laser_geometry/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libkdl_conversions.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
@@ -1227,6 +1242,9 @@ rospack_DIR:PATH=/opt/ros/kinetic/share/rospack/cmake
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/kinetic/share/rospy/cmake
 
+//The directory containing a CMake configuration file for rostest.
+rostest_DIR:PATH=/opt/ros/kinetic/share/rostest/cmake
+
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
 
@@ -1271,6 +1289,12 @@ trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
 
 //The directory containing a CMake configuration file for transmission_interface.
 transmission_interface_DIR:PATH=/opt/ros/kinetic/share/transmission_interface/cmake
+
+//Value Computed by CMake
+twist_mux_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws_sj/build/twist_mux
+
+//Value Computed by CMake
+twist_mux_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws_sj/src/twist_mux
 
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
@@ -1415,7 +1439,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=20
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=22
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

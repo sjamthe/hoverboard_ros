@@ -6,6 +6,7 @@
   <xacro:property name="bodyheight" value="0.10" />
   <xacro:property name="wheeldiam" value="0.1651" />
   <xacro:property name="wheelwidth" value="0.06" />
+  <xacro:property name="lidarpos" value="0.18" />
   <xacro:property name="pi" value="3.1415" />
 
   <material name="blue">
@@ -42,6 +43,28 @@
       </geometry>
     </collision>
   </link>
+<!--
+  <link name="lidar">
+    <visual>
+      <origin xyz="0 -${lidarpos} ${wheeldiam}" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius=".035" length=".08"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius=".035" length=".08"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar"/>
+    <origin xyz="0 -${lidarpos} ${wheeldiam}" rpy="0 0 0" />
+  </joint>
+-->
 
   <link name="left_wheel">
     <visual>

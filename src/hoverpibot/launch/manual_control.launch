@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- Listen to joystick using joy_node republish using teleop_twist_joy  -->
+  <group ns="mobile_base_controller">
+    <rosparam command="load" file="$(find hoverpibot)/config/teleop.yaml" />
+
+    <node pkg="joy" type="joy_node" name="joy_node" />
+    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy"/>
+<!--
+    <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+      <rosparam command="load" file="$(find hoverpibot)/config/twist_mux.yaml" />
+      <remap from="cmd_vel_out" to="hoverpibot/cmd_vel"/>
+    </node>
+-->
+  </group>
+</launch>
