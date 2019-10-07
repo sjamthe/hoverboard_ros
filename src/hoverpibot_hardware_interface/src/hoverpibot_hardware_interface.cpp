@@ -16,8 +16,8 @@ namespace hoverpibot_hardware_interface
 {
     hoverpibotHardwareInterface::hoverpibotHardwareInterface(ros::NodeHandle& nh) : nh_(nh),hoverpibot(nh) {
         printf("Inside hoverpibotHardwareInterface init\n");
-        init();
         hoverpibot.init();
+        init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
         nh_.param("/hoverpibot/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
@@ -80,9 +80,11 @@ namespace hoverpibot_hardware_interface
     void hoverpibotHardwareInterface::update(const ros::TimerEvent& e) {
         elapsed_time_ = ros::Duration(e.current_real - e.last_real);
         //printf("Inside update %lf\n",elapsed_time_.toSec());
-        read();
-        controller_manager_->update(ros::Time::now(), elapsed_time_);
-        write(elapsed_time_);
+        if(hoverpibot.initComplete) {
+          read();
+          controller_manager_->update(ros::Time::now(), elapsed_time_);
+          write(elapsed_time_);
+        }
     }
 
     void hoverpibotHardwareInterface::read() {

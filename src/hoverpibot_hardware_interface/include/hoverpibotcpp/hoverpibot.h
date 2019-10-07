@@ -20,6 +20,7 @@ namespace hoverpibotcpp
 			sensor_msgs::JointState read(void);
 			void init(void);
 			void actuate(sensor_msgs::JointState joint);
+			int initComplete;
 
 		protected:
 			ros::NodeHandle nh_;

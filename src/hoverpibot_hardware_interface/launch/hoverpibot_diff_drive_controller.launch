@@ -1,10 +1,12 @@
 <launch>
+
    <!-- =====================     ROS_SERIAL NODE FOR BOT    ============================= -->
-   <!--
+
     <node pkg="rosserial_python" type="serial_node.py" name="rosserial" output="screen">
       <param name="port" value="/dev/ttyUSB0" />
       <param name="baud" value="115200" />
    </node>
+   <!--
    -->
 
    <!-- =================   ROBOT MODEL DEFINITION   ==================== -->
@@ -15,7 +17,7 @@
     <rosparam file="$(find hoverpibot_hardware_interface)/config/controller_diff_drive.yaml" command="load"/>
 
    <!-- =====================     ROS_CONTROL NODES     ============================= -->
-    <node name="hoverpibot_hardware_interface" pkg="hoverpibot_hardware_interface" type="hoverpibot_hardware_interface_node" 
+    <node name="hoverpibot_hardware_interface" pkg="hoverpibot_hardware_interface" type="hoverpibot_hardware_interface_node"
      output="screen"/>
 
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
